@@ -72,7 +72,8 @@ var app = new Vue({
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
                 headers:{
-                    "content-type":"application/json"
+                    "Content-Type":"application/json",
+                    "Access-Control-Allow-Origin": "*",
                 },
                 body: JSON.stringify(line_items)
             })
