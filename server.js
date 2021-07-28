@@ -119,7 +119,10 @@ app.post('/create-checkout-session', async (req, res) => {
     cancel_url: `${domainURL}/cancelled.html`,
   });
 
-  return res.redirect(303, session.url);
+  // return res.redirect(303, session.url);
+  return res.json({
+    url: session.url
+  })
 });
 
 // Webhook handler for asynchronous events.
@@ -146,7 +149,7 @@ app.post('/webhook', async (req, res) => {
     data = event.data;
     eventType = event.type;
   } else {
-    // Webhook signing is recommended, but if the secret is not configured in `config.js`, 
+    // Webhook signing is recommended, but if the secret is not configured in `config.js`,
     // retrieve the event data directly from the request body.
     data = req.body.data;
     eventType = req.body.type;
