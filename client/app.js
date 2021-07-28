@@ -80,7 +80,7 @@ var app = new Vue({
             }).then(function (response) {
               response.json(function (responseData) {
                 if (responseData.url) {
-                  window.location = url;
+                  window.location = response.data.url;
                 }
               })
             })
