@@ -146,7 +146,7 @@ app.post('/webhook', async (req, res) => {
     data = event.data;
     eventType = event.type;
   } else {
-    // Webhook signing is recommended, but if the secret is not configured in `config.js`,
+    // Webhook signing is recommended, but if the secret is not configured in `config.js`, 
     // retrieve the event data directly from the request body.
     data = req.body.data;
     eventType = req.body.type;
