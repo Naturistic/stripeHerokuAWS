@@ -7,6 +7,7 @@ var app = new Vue({
         active: false,
         searchString:"",
         selected_category:"Highlights",
+        cart_empty: "the cart is empty",
         search_string:"",
         page:"home",
         category_products:[],
