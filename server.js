@@ -101,6 +101,8 @@ app.get('/checkout-session', async (req, res) => {
   res.send(session);
 });
 
+
+
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = serverURL;
 
