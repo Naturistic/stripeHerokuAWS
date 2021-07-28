@@ -78,8 +78,7 @@ var app = new Vue({
                 },
                 body: JSON.stringify(line_items)
             }).then(function (response) {
-              console.log(response);
-              response.json(function (responseData) {
+              response.json().then(function (responseData) {
                 console.log(responseData);
                 if (responseData.url) {
                   window.location = responseData.url;
