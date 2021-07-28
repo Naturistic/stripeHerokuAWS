@@ -77,6 +77,12 @@ var app = new Vue({
                     "Access-Control-Allow-Origin": "*",
                 },
                 body: JSON.stringify(line_items)
+            }).then(function (response) {
+              response.json(function (responseData) {
+                if (responseData.url) {
+                  window.location = url;
+                }
+              })
             })
         },
 
