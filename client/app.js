@@ -64,7 +64,7 @@ var app = new Vue({
                       bigURL: product.bigImage,
                     }
                     line_items.push(Obj1);
-                    success_items.push(Obj2);
+                    success_items.push(Obj2); 
                 });
 
                 var sendItems=[Obj1, Obj2];
