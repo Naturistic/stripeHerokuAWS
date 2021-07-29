@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 app.get('/cancelled', (req, res) => {
   console.log("serving up cancelled page");
-  const path = resolve('cancelled.html');
+  const path = resolve('cancelledx.html');
   res.sendFile(path);
 });
 
