@@ -145,7 +145,7 @@ app.post('/create-checkout-session', async (req, res) => {
     return res.status(400).send({
       Error: error.raw.message,
     });
-  }
+  } 
 });
 
 // Webhook handler for asynchronous events.
