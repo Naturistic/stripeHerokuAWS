@@ -54,19 +54,19 @@ var app = new Vue({
             var success_items=[];
             var Obj1={};
 
-//                loop through for each object in the cart.
-                this.cart.forEach((product)=>{
+//       loop through for each object in the cart.
+            this.cart.forEach((product)=>{
 
-                    Obj1 = {
-                        price: product.priceId,
-                        quantity: 1,
-                        image: product.image,
-                        bigURL: product.bigImage,
-                    }
+                Obj1 = {
+                    price: product.priceId,
+                    quantity: 1,
+                    image: product.image,
+                    bigURL: product.bigImage,
+                }
 
-                    line_items.push(Obj1);
+                line_items.push(Obj1);
 
-                });
+            });
 
 
 
