@@ -64,7 +64,7 @@ var app = new Vue({
                       bigURL: product.bigImage,
                     }
                     line_items.push(Obj1);
-                    success.items.push(Obj2);
+                    success_items.push(Obj2);
                 });
 
                 var sendItems=[Obj1, Obj2];
@@ -76,7 +76,7 @@ var app = new Vue({
                     "Content-Type":"application/json",
                     "Access-Control-Allow-Origin": "*",
                 },
-                body: JSON.stringify(line_items)
+                body: JSON.stringify(sendItems)
             }).then(function (response) {
               response.json().then(function (responseData) {
                 console.log(responseData);
