@@ -111,8 +111,14 @@ app.get("/prices", async (req, res) => {
 // Fetch the Checkout Session to display the JSON result on the success page
 app.get('/checkout-session', async (req, res) => {
   const { sessionId } = req.query;
-  const session = await stripe.checkout.sessions.retrieve(sessionId);
-  res.send(session);
+  try {
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+    res.send(session);
+  } catch (error) {
+    return res.status(400).send({
+      Error: error.raw.message,
+    });
+  }
 });
 
 
