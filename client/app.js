@@ -75,7 +75,7 @@ var app = new Vue({
             });
 
             sendObj={
-              lineIems: line_items,
+              lineItems: line_items,
               successImages: success_images,
             }
 
