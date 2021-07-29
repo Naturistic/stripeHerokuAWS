@@ -120,7 +120,8 @@ app.get('/checkout-session', async (req, res) => {
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = serverURL;
 
-  console.log(req.body);
+  console.log(req.body.lineItems);
+  console.log(req.body.successImages);
 
   const pmTypes = [
       'card',
