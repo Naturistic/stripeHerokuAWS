@@ -131,7 +131,7 @@ app.post('/create-checkout-session', async (req, res) => {
       payment_method_types: pmTypes,
       mode: 'payment',
       line_items: req.body.lineItems,
-      metadata: req.body.successImages,
+      metadata: { msg: "this is  a good metadata value"},
     // ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
       success_url: `${domainURL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${domainURL}/cancelled`,
@@ -145,7 +145,7 @@ app.post('/create-checkout-session', async (req, res) => {
     return res.status(400).send({
       Error: error.raw.message,
     });
-  } 
+  }
 });
 
 // Webhook handler for asynchronous events.
