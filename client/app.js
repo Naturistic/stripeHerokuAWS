@@ -51,7 +51,6 @@ var app = new Vue({
 
         postPrice: function(){
             var line_items=[];
-            var success_items=[];
             var Obj1={};
 
 //       loop through for each object in the cart.
@@ -69,15 +68,13 @@ var app = new Vue({
             });
 
 
-
-
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
                 headers:{
                     "Content-Type":"application/json",
                     "Access-Control-Allow-Origin": "*",
                 },
-                body: JSON.stringify(sendItems)
+                body: JSON.stringify(line_items)
             }).then(function (response) {
               response.json().then(function (responseData) {
                 console.log(responseData);
