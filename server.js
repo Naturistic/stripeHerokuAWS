@@ -126,21 +126,26 @@ app.post('/create-checkout-session', async (req, res) => {
   const pmTypes = [
       'card',
     ];
-
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: pmTypes,
-    mode: 'payment',
-    line_items: req.body.lineItems,
-    metadata: req.body.successImages,
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: pmTypes,
+      mode: 'payment',
+      line_items: req.body.lineItems,
+      metadata: req.body.successImages,
     // ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
-    success_url: `${domainURL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${domainURL}/cancelled`,
-  });
+      success_url: `${domainURL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${domainURL}/cancelled`,
+    });
 
   // return res.redirect(303, session.url);
-  return res.json({
-    url: session.url
-  })
+    return res.json({
+      url: session.url
+    })
+  } catch (error) {
+    return res.status(400).send({
+      Error: error.raw.message,
+    });
+  }
 });
 
 // Webhook handler for asynchronous events.
