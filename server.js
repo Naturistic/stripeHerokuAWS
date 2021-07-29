@@ -115,7 +115,10 @@ app.post('/create-checkout-session', async (req, res) => {
 
   console.log(req.body);
 
-  const pmTypes = ('card').split(',').map((m) => m.trim());
+  const pmTypes = [
+      'card',
+      'wallet',
+    ],
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: pmTypes,
