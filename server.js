@@ -37,6 +37,13 @@ app.get('/', (req, res) => {
   res.sendFile(path);
 });
 
+app.get('/cancelled', (req, res) => {
+  console.log("serving up cancelled page");
+  const path = resolve('cancelled.html');
+  res.sendFile(path);
+});
+
+
 // minimize endpoints to fit rebuilt SPA style
 
 // Use STRIPE API to get all of the prices that have been defined.
