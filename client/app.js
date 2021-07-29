@@ -53,23 +53,22 @@ var app = new Vue({
             var line_items=[];
             var success_items=[];
             var Obj1={};
-            var Obj2={};
+
 //                loop through for each object in the cart.
                 this.cart.forEach((product)=>{
 
                     Obj1 = {
                         price: product.priceId,
-                        quantity: 1
+                        quantity: 1,
+                        image: product.image,
+                        bigURL: product.bigImage,
                     }
-                    Obj2 = {
-                      image: product.image,
-                      bigURL: product.bigImage,
-                    }
+
                     line_items.push(Obj1);
-                    success_items.push(Obj2);
+
                 });
 
-                var sendItems=[Obj1, Obj2];
+
 
 
             fetch(`${url}/create-checkout-session`,{
