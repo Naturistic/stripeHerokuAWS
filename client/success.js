@@ -10,13 +10,11 @@ if (sessionId) {
     .then(function (session) {
       var sessionJSON = JSON.parse(session.metadata.images);
 
-      session.metadata.images.split(',').forEach( (image) => {
+      session.metadata.images.split(',').forEach( (item) => {
 
           let obj = {
-
-            image: image.images,
-            bigImage: image.bigURL,
-
+            image: item.image,
+            bigImage: item.bigURL,
          };
 
          console.log(obj);
