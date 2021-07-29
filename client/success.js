@@ -1,8 +1,6 @@
 var urlParams = new URLSearchParams(window.location.search);
 var sessionId = urlParams.get('session_id');
 
-const AWS = require('aws-sdk')
-
 
 AWS.config.update({
 
