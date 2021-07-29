@@ -10,9 +10,9 @@ if (sessionId) {
     .then(function (session) {
       var sessionJSON = JSON.parse(session.metadata.images);
 
-      session.metadata.images.split(',').forEach( (item) => {
+      session.metadata.images.split(',').forEach( (item , index) => {
 
-         console.log(item);
+         console.log(item[index].image);
 
       });
 
