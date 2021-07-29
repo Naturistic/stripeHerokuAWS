@@ -3,8 +3,6 @@ const cors = require('cors');
 const app = express();
 const { resolve } = require('path');
 const AWS = require('aws-sdk')
-// Copy the .env.example in the root into a .env file in this folder
-//require('dotenv').config({ path: './.env' });
 
 const serverURL = 'https://naturistic-demo.herokuapp.com'
 
@@ -12,7 +10,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2020-08-27',
   appInfo: { //  not required for production:
     name: "naturistic e-store demo",
-    version: "0.0.1",
+    version: "1.0.1",
     url: "https://Naturistic.github.io"
   }
 });
