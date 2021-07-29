@@ -45,6 +45,7 @@ app.get('/cancelled', (req, res) => {
 
 app.get('/success', (req, res) => {
   console.log("serving up kaChing page");
+  console.log(req.query.session_id);
   const path = resolve('client/success.html');
   res.sendFile(path);
 });
@@ -118,6 +119,8 @@ app.get('/checkout-session', async (req, res) => {
 
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = serverURL;
+
+  console.log(req.body);
 
   const pmTypes = [
       'card',
