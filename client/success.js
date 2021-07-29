@@ -14,8 +14,8 @@ if (sessionId) {
 
           let obj = {
 
-            image: price.product.images[0],
-            bigImage: price.product.metadata.bigURL,
+            image: image.images,
+            bigImage: image.bigURL,
 
          };
 
