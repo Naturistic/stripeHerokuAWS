@@ -60,7 +60,7 @@ var app = new Vue({
                 quantity: 1
               }
             ]
-                loop through for each object in the cart.
+//                loop through for each object in the cart.
                 this.cart.forEach((product,index)=>{
                     var price=product.price
                     let Obj = {
