@@ -63,9 +63,9 @@ var app = new Vue({
                     line_items.push(Obj);
                 }),
 
-                
 
-            fetch(`${url}/create-checkout-sessionX`,{
+
+            fetch(`${url}/create-checkout-session`,{
                 method: "POST",
                 headers:{
                     "Content-Type":"application/json",
