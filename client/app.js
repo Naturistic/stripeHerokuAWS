@@ -64,7 +64,6 @@ var app = new Vue({
                 }),
 
 
-
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
                 headers:{
