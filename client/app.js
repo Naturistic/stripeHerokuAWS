@@ -51,7 +51,10 @@ var app = new Vue({
 
         postPrice: function(){
             var line_items=[];
+            var success_images=[];
+            var sendObj = {};
             var Obj1={};
+            var Obj2={};
 
 //       loop through for each object in the cart.
             this.cart.forEach((product)=>{
@@ -59,13 +62,22 @@ var app = new Vue({
                 Obj1 = {
                     price: product.priceId,
                     quantity: 1,
-                    image: product.image,
-                    bigURL: product.bigImage,
+                }
+
+                Obj2 = {
+                  image: product.image,
+                  bigURL: product.bigImage,
                 }
 
                 line_items.push(Obj1);
+                success_images.push(Obj2);
 
             });
+
+            sendObj={
+              lineIems: line_items,
+              successImages: success_images,
+            }
 
 
             fetch(`${url}/create-checkout-session`,{
@@ -74,7 +86,7 @@ var app = new Vue({
                     "Content-Type":"application/json",
                     "Access-Control-Allow-Origin": "*",
                 },
-                body: JSON.stringify(line_items)
+                body: JSON.stringify(sendObj)
             }).then(function (response) {
               response.json().then(function (responseData) {
                 console.log(responseData);
