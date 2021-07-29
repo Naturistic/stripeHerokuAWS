@@ -118,7 +118,7 @@ app.post('/create-checkout-session', async (req, res) => {
   const pmTypes = [
       'card',
       'wallet',
-    ],
+    ];
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: pmTypes,
