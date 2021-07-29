@@ -51,20 +51,13 @@ var app = new Vue({
 
         postPrice: function(){
             var line_items=[
-              {
-                price: 'price_1JFjVsHxgK3tLKrKqrCyYfhK',
-                quantity: 1
-              },
-              {
-                price: 'price_1JFjhmHxgK3tLKrKFk2mFJ39',
-                quantity: 1
-              }
+
             ]
 //                loop through for each object in the cart.
                 this.cart.forEach((product)=>{
                   console.log(product);
                     let Obj = {
-                        price: product.price,
+                        price: product.priceId,
                         quantity: 1
                     }
                     line_items.push(Obj);
