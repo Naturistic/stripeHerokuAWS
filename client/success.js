@@ -9,7 +9,7 @@ if (sessionId) {
       return result.json();
     })
     .then(function (session) {
-      var sessionJSON = JSON.stringify(session, null, 2);
+      var sessionJSON = JSON.parse(session.metadata.images);
       document.querySelector('pre').textContent = sessionJSON;
     })
     .catch(function (err) {
