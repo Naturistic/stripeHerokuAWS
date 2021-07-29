@@ -65,9 +65,9 @@ var app = new Vue({
                     }
                     line_items.push(Obj1);
                     success.items.push(Obj2);
-                }),
+                });
 
-            var sendItems = { Obj1, Obj2 } ;   
+                var sendItems=[Obj1, Obj2];
 
 
             fetch(`${url}/create-checkout-session`,{
