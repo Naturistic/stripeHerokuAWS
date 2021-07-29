@@ -43,6 +43,12 @@ app.get('/cancelled', (req, res) => {
   res.sendFile(path);
 });
 
+app.get('/success', (req, res) => {
+  console.log("serving up kaChing page");
+  const path = resolve('client/success.html');
+  res.sendFile(path);
+});
+
 
 // minimize endpoints to fit rebuilt SPA style
 
