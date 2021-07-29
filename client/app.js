@@ -49,7 +49,7 @@ var app = new Vue({
             })
         },
 
-        postPrice: ()=>{
+        postPrice: function(){
             var line_items=[
               {
                 price: 'price_1JFjVsHxgK3tLKrKqrCyYfhK',
@@ -60,15 +60,15 @@ var app = new Vue({
                 quantity: 1
               }
             ]
-                //loop through for each object in the cart.
-//                this.cart.forEach((product,index)=>{
-//                    var price=product.price
-//                    let Obj = {
-//                        price: price,
-//                        quantity: 1
-//                    }
-//                    line_items.push(Obj);
-//                }),
+                loop through for each object in the cart.
+                this.cart.forEach((product,index)=>{
+                    var price=product.price
+                    let Obj = {
+                        price: price,
+                        quantity: 1
+                    }
+                    line_items.push(Obj);
+                }),
 
             fetch(`${url}/create-checkout-session`,{
                 method: "POST",
