@@ -55,13 +55,15 @@ var app = new Vue({
             ]
 //                loop through for each object in the cart.
                 this.cart.forEach((product)=>{
-                  console.log(product);
+
                     let Obj = {
                         price: product.priceId,
                         quantity: 1
                     }
                     line_items.push(Obj);
                 }),
+
+                
 
             fetch(`${url}/create-checkout-sessionX`,{
                 method: "POST",
