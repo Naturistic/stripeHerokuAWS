@@ -12,12 +12,7 @@ if (sessionId) {
 
       session.metadata.images.split(',').forEach( (item) => {
 
-          let obj = {
-            image: item.image,
-            bigImage: item.bigURL,
-         };
-
-         console.log(obj);
+         console.log(item);
 
       });
 
