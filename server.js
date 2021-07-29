@@ -119,8 +119,6 @@ app.get('/checkout-session', async (req, res) => {
 app.post('/create-checkout-session', async (req, res) => {
   const domainURL = serverURL;
 
-  console.log(req.body);
-
   const pmTypes = [
       'card',
     ];
@@ -129,6 +127,7 @@ app.post('/create-checkout-session', async (req, res) => {
     payment_method_types: pmTypes,
     mode: 'payment',
     line_items: req.body,
+    metadata: {"some stuff we want back"},
     // ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
     success_url: `${domainURL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${domainURL}/cancelled`,
