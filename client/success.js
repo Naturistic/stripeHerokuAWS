@@ -12,7 +12,7 @@ if (sessionId) {
 
       session.metadata.images.split(',').forEach( (item , index) => {
 
-         console.log(item[index].split(':'));
+         console.log(item.split(':'));
 
       });
 
